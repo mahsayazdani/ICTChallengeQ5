@@ -1,4 +1,5 @@
-package PACKAGE_NAME;
-
-public class FullCapacityException {
+public class FullCapacityException extends Exception {
+    public FullCapacityException() {
+        super("Bank is full!");
+    }
 }
