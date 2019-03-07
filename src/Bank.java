@@ -5,15 +5,23 @@ public class Bank {
     private int freeSeatCount;
     private long currentTime;
     private ArrayList<Client> clients;
+    private Gate[] gates;
 
     public Bank(int gateInitCount, int seatInitCount) {
         freeGateCount = gateInitCount;
         freeSeatCount = seatInitCount;
     }
 
+    public Bank(int freeSeatCount, Gate[] gates) {
+        this.freeGateCount = gates.length;
+        this.freeSeatCount = freeSeatCount;
+        this.gates = gates;
+    }
+
     public void enter(Client client) throws FullCapacityException {
         if (freeGateCount > 0) {
             freeGateCount--;
+            client.setOnWork(true);
             clients.add(client);
         } else if (freeSeatCount > 0) {
             freeSeatCount--;
@@ -31,11 +39,12 @@ public class Bank {
                 clients.remove(client);
                 Main.done(client, "JobsDone");
                 i--;
-            }else if(client.getEndWaitTime() > currentTime){
+            }else if((!client.isOnWork()) && client.getEndWaitTime() > currentTime){
                 clients.remove(client);
                 Main.done(client, "Bored");
                 i--;
-            }else{
+            }else if(client.isOnWork()){
+
                 client.decreaseRemainWork();
             }
         }

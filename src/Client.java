@@ -5,6 +5,7 @@ public class Client {
     private int entryTime;
     private int endWaitTime;
     private int remainWork;
+    private boolean onWork;
 
     public Client(int id, int entryTime, int endWaitTime, int remainWork) {
         this.id = id;
@@ -35,5 +36,13 @@ public class Client {
 
     public void setRemainWork(int remainWork) {
         this.remainWork = remainWork;
+    }
+
+    public boolean isOnWork() {
+        return onWork;
+    }
+
+    public void setOnWork(boolean onWork) {
+        this.onWork = onWork;
     }
 }
