@@ -37,6 +37,9 @@ public class Bank {
                 i--;
             }
         }
+    }
 
+    public long getCurrentTime() {
+        return currentTime;
     }
 }
