@@ -24,10 +24,15 @@ public class Bank {
     }
 
     public void timeLapse(){
-
+        currentTime ++;
+        for(Client client : clients){
+            if(client.getRemainWork() <= 0){
+                clients.remove(client);
+                Main.done(client, "JobsDone");
+            }else if(client.getEndWaitTime() > currentTime){
+                clients.remove(client);
+                Main.done(client, "Bored");
+            }
+        }
     }
-=======
-  
-  
->>>>>>> refs/remotes/origin/master
 }
