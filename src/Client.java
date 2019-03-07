@@ -32,4 +32,8 @@ public class Client {
     public void decreaseRemainWork(){
         remainWork--;
     }
+
+    public void setRemainWork(int remainWork) {
+        this.remainWork = remainWork;
+    }
 }
