@@ -26,4 +26,8 @@ public class Bank {
     public void timeLapse(){
 
     }
+=======
+  
+  
+>>>>>>> refs/remotes/origin/master
 }
