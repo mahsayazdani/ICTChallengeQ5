@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+*.xml
 .idea/*
 
 # Compiled class file
@@ -51,4 +51,3 @@ HELP.md
 /nbdist/
 /.nb-gradle/
 /build/
->>>>>>> refs/remotes/origin/master
