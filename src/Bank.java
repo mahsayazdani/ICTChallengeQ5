@@ -35,6 +35,8 @@ public class Bank {
                 clients.remove(client);
                 Main.done(client, "Bored");
                 i--;
+            }else{
+                client.decreaseRemainWork();
             }
         }
     }
