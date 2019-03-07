@@ -25,14 +25,18 @@ public class Bank {
 
     public void timeLapse(){
         currentTime ++;
-        for(Client client : clients){
+        for(int i=0; i<clients.size(); i++){
+            Client client = clients.get(i);
             if(client.getRemainWork() <= 0){
                 clients.remove(client);
                 Main.done(client, "JobsDone");
+                i--;
             }else if(client.getEndWaitTime() > currentTime){
                 clients.remove(client);
                 Main.done(client, "Bored");
+                i--;
             }
         }
+
     }
 }
