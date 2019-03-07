@@ -13,11 +13,19 @@ public class Main {
         List<Client> clients = new ArrayList<>();
 
         for(int i = 1, enterTime = 0; i <= n; ++i) {
+<<<<<<< HEAD
             int servicTime = scan.nextInt();
             int boredThreshold = scan.nextInt();
             int entryDelay = scan.nextInt();
             enterTime += entryDelay;
             clients.add(new Client(i, servicTime, boredThreshold, enterTime));
+=======
+            int serviceTime = scan.nextInt();
+            int boredThreshold = scan.nextInt();
+            int entryDelay = scan.nextInt();
+            enterTime += entryDelay;
+            clients.add(new Client(i, serviceTime, boredThreshold, enterTime));
+>>>>>>> 4e2e1858a6a77b442964e3e3f37443f2437b38d4
         }
 
         int time = 0;
