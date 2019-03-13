@@ -13,14 +13,14 @@ public class Main {
         List<Client> clients = new ArrayList<>();
 
         for (int i = 1, enterTime = 0; i <= n; ++i) {
-
+            System.out.println("new branch ");
             int serviceTime = scan.nextInt();
             int boredThreshold = scan.nextInt();
             int entryDelay = scan.nextInt();
             enterTime += entryDelay;
             clients.add(new Client(i, serviceTime, boredThreshold, enterTime));
         }
-
+            Character.toString()
         int time = 0;
         for (Client client : clients) {
             try {
